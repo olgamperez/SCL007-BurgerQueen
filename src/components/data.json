@@ -1,0 +1,78 @@
+{
+    "data": {
+        "desayuno": [{
+                "type": "Cafe Americano",
+                "price": "500$"
+            },
+            {
+                "type": "Cafe con Leche",
+                "price": "700$"
+            },
+            {
+                "type": "Sandwich de jamon y queso",
+                "price": "1000$"
+            },
+            {
+                "type": "Jugo Natural",
+                "price": "700$"
+            }
+        ],
+        "menu": [{
+                    "type": "Hamburguesa Sencilla",
+                    "price": "1500$"
+                },
+                {
+                    "type": "Hamburguesa con Queso",
+                    "price": "2000$"
+                },
+                {
+                    "type": "Hamburguesa con Huevo",
+                    "price": "2000$"
+                },
+                {
+                    "type": "Hamburguesa con Huevo y Queso",
+                    "price": "2500$"
+                },
+                {
+                    "type": "Hamburguesa Doble",
+                    "price": "2500$"
+                },
+                {
+                    "type": "Hamburguesa Doble con Queso",
+                    "price": "3000$"
+                },
+                {
+                    "type": "Hamburguesa Doble con Huevo",
+                    "price": "3000$"
+                },
+                {
+                    "type": "Hamburguesa Doble con Huevo y Queso",
+                    "price": "3500$"
+                },
+                {
+                    "type": "Papa Fritas",
+                    "price":"500$"
+                },
+                {
+                    "type": "Onion Rings",
+                    "price":"500$"
+                },
+                {
+                    "type": "Agua Pequeña",
+                    "price": "500$"
+                },
+                {
+                    "type": "Agua Grande",
+                    "price": "800$"
+                },
+                {
+                    "type": "Gaseosa Pequeña",
+                    "price":"700$"
+                },
+                {
+                    "type": "Gaseosa Grande",
+                    "price":"1000$"
+                }
+        ]
+    }
+}
