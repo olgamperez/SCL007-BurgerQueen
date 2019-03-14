@@ -16,8 +16,10 @@ class Breakfast extends Component {
     }
     const infoMenu = dataAcc[0].map((arr)=>{
       return(
-          <div>
+          <div className="col-md-4">
+            <div className="card-mt-4">
               <button> {arr.type} {arr.price} </button>
+            </div>
           </div>
       )
     })
