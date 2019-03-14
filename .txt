@@ -1,0 +1,25 @@
+1. provider.js
+   Inicio de FBase
+      import * as firebase
+
+2. iniciamos
+   firebase.initializeApp (-----)
+
+   export const database = firebase.database();
+
+   import { database} from 'ruta'
+
+
+   Como mezclar estado con firebase
+
+   database.ref('pedidos').on('value', (snaphot)=>{
+
+   })
+crear funcion dentro del component
+componentDidmount(){}
+se usan para realizar acciones dentro del componente solo se colocan no es necesario llamarlas
+
+ejemplo: this.setState({
+    ...this.state,
+    pedidos: snaphot
+})
