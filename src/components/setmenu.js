@@ -15,8 +15,10 @@ class Setmenu extends Component {
     }
     const infoMenu = dataAcc[1].map((arr)=>{
         return(
-            <div>
-                <button> {arr.type} {arr.price} </button>
+            <div className="col-md-4">
+                <div className="card-mt-4">
+                    <button> {arr.type} {arr.price} </button>
+                </div>
             </div>
         )
     })
