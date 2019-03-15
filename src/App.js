@@ -7,15 +7,18 @@ import Nav from './components/nav.js';
 import  Breakfast from './components/breakfast.js'
 import Setmenu from './components/setmenu.js'
 import Registerclient from './components/client.js'
+import Kitchen from './components/kitchen';
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state= {
       initialBreak:false,
       initialSetmenu: false,
       name: "",
-      temp: ""
+      temp: "",
+      //idorder:[]
+
     }
     this.changeStateFunction= this.changeStateFunction.bind(this);
     this.changeStateSetmenuFunction= this.changeStateSetmenuFunction.bind(this);
@@ -66,18 +69,15 @@ saveTemp(){
       <div className="App">
         <Header />
         < Nav />
-        <div className="Screen1">
-        <Registerclient onChangeTemp={this.updateTemp} onChangeDelete={this.state.temp} onClient={this.updateName}/>
-        <h1>Garzon</h1>
-        <Food onBreakfast={this.changeStateFunction}
-        onSetmenu={this.changeStateSetmenuFunction}/>
-          { this.state.initialBreak && <Breakfast/>}
-          { this.state.initialSetmenu && <Setmenu/> }
-        </div>
-        <div className="Screen2">
-          <h1>Cocina</h1>
-          {this.saveTemp()}
-          <p>Pedidos</p>
+        <div className="container">
+          <div className="Screen1">
+            <h1 className="waiter">Garzon</h1>
+            <Registerclient onChangeTemp={this.updateTemp} onChangeDelete={this.state.temp} onClient={this.updateName}/>
+            <Food onBreakfast={this.changeStateFunction} onSetmenu={this.changeStateSetmenuFunction}/>
+            { this.state.initialBreak && <Breakfast/>}
+            { this.state.initialSetmenu && <Setmenu/> }
+          </div>
+          <Kitchen inputName={this.saveTemp()}/>
         </div>
       </div>
     );

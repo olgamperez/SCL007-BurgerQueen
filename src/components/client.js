@@ -3,10 +3,9 @@ import React from 'react';
 function Registerclient(props){
         return(
             <div>
-                <p>Cliente:</p>
-                <input type='text' onChange={props.onChangeTemp} value={props.onChangeDelete}/>
-                <button onClick={props.onClient} type="button" className="btn btn-outline-primary">
-            Clickeame
+                <input type='text' onChange={props.onChangeTemp} value={props.onChangeDelete} placeholder="Ingrese cliente"/>
+                <button id="btn-input" onClick={props.onClient} type="button" className="btn btn-outline-danger">
+            Enviar
             </button>
             </div>
         )

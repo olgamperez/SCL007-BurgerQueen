@@ -12,14 +12,17 @@
   "bugs": {
     "url": "https://github.com/olgamperez/SCL007-BurgerQueen/issues"
   },
-  "homepage": "https://github.com/olgamperez/SCL007-BurgerQueen#readme",
+  "homepage": "https://olgamperez.github.io/SCL007-BurgerQueen",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.5"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +36,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "react-addons-test-utils": "^15.6.2"
+  }
 }

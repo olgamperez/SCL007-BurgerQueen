@@ -4,8 +4,8 @@ class Nav extends Component{
     render(){
         return(
             <nav className="navbar">
-            <a href='www.google.com'>
-            Tasks
+            <a className="link" href='www.google.com'>
+            Clientes
             </a>
             </nav>
         )
