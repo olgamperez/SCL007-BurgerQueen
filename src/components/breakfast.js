@@ -18,7 +18,7 @@ class Breakfast extends Component {
       return(
           <div className="col-md-4">
             <div className="card-mt-4">
-              <button id="btnbreak" className="btn btn-secondary btn-lg"> {arr.type} <br/>{arr.price} </button>
+              <button id="btnbreak" className="btn btn-secondary btn-lg" onClick={()=>this.props.onClick(arr)}> {arr.type} <br/>{arr.price} </button>
             </div>
           </div>
       )
