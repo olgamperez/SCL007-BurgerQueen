@@ -8,9 +8,6 @@ import Setmenu from './components/setmenu.js'
 import Registerclient from './components/client.js'
 import Kitchen from './components/kitchen';
 
-
-
-
 class App extends Component {
   constructor(props){
     super(props);
