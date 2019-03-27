@@ -2,9 +2,9 @@ import React from 'react';
 import Table from 'react-bootstrap/Table'
 
 function Kitchen(props){
-    const printOrderList= props.inputOrder.map(item=>{
+    const printOrderList= props.inputOrder.map((item,i)=>{
         return(
-            <tr>
+            <tr key={i}>
                 <td>{item.type}</td>
                 <td>{item.price}</td>
             </tr>
@@ -25,7 +25,7 @@ function Kitchen(props){
                 <tbody>
                     {printOrderList}  
                 </tbody>
-            </Table>;
+            </Table>
         </div>
     )
 }
