@@ -12,8 +12,8 @@ function Kitchen(props){
             </tr>
         )
     })
-    const suma = props.inputOrder.reduce((antes, despues)=>{
-        return (antes + despues.price)}, 0)
+    const addPrice = props.inputOrder.reduce((pre, post)=>{
+        return (pre + post.price)}, 0)
     return(
         <div className="Screen2">
             <h1 className="kitchen">Cocina</h1>
@@ -30,7 +30,7 @@ function Kitchen(props){
                 <tbody>
                     {printOrderList} 
                     <tr>
-                        <td colSpan="2"><h3 id="total">Total: $ {suma}</h3></td>
+                        <td colSpan="2"><h3 id="total">Total: $ {addPrice}</h3></td>
                     </tr>
                     
                 </tbody>
