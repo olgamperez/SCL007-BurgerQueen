@@ -26,6 +26,7 @@ class App extends Component {
     this.updateName= this.updateName.bind(this);
     this.orderBreakfast= this.orderBreakfast.bind(this);
     this.listenFirebase=this.listenFirebase.bind(this);
+    this.deleteOrderFunction=this.deleteOrderFunction.bind(this);
 
   }
 changeStateFunction(){
@@ -68,14 +69,22 @@ saveTemp(){
   }
 }
 orderBreakfast(e){
-  let add = this.state.total;
-  add = add + e.price
+  // let add = this.state.total;
+  // add = add + e.price
   let orderAcc= this.state.idorder;
   orderAcc.push(e);
   this.setState({
     ...this.state,
     idorder: orderAcc,
-    total: add
+    // total: add
+  })
+}
+deleteOrderFunction(elem){
+  this.setState({
+    ...this.state,
+    idorder:this.state.idorder.filter((l)=>{
+      return l !== elem
+    })
   })
 }
 
@@ -107,8 +116,7 @@ listenFirebase(){
             { this.state.initialBreak && <Breakfast onClick={this.orderBreakfast} />}
             { this.state.initialSetmenu && <Setmenu onClick={this.orderBreakfast} /> }
           </div>
-          <Kitchen inputName={this.saveTemp()} inputOrder={this.state.idorder} inputTotal={this.state.total} firebase={this.listenFirebase}/>
-        <h3>Total : {this.state.total}</h3>
+          <Kitchen inputName={this.saveTemp()} inputOrder={this.state.idorder} inputTotal={this.state.total} firebase={this.listenFirebase} deleteOrder={this.deleteOrderFunction}/>
         </div>
       </div>
     );

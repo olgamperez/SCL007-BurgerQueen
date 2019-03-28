@@ -43,6 +43,12 @@
   font-size: 20px;
   padding: 1%;
 }
+#btndelete{
+  margin: 1rem;
+}
+#total{
+  text-align: center;
+}
 #btnmenuday, #btnbreak{
   font-size: 15px;
   margin: 1rem;

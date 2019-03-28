@@ -1,15 +1,19 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table'
 
+
 function Kitchen(props){
     const printOrderList= props.inputOrder.map((item,i)=>{
         return(
             <tr key={i}>
                 <td>{item.type}</td>
                 <td>{item.price}</td>
+                <button id="btndelete" className="btn btn-secondary btn-es" onClick={()=>props.deleteOrder(item)}>X</button>
             </tr>
         )
     })
+    const suma = props.inputOrder.reduce((antes, despues)=>{
+        return (antes + despues.price)}, 0)
     return(
         <div className="Screen2">
             <h1 className="kitchen">Cocina</h1>
@@ -20,10 +24,15 @@ function Kitchen(props){
                     <tr>
                         <th>Productos</th>
                         <th>Precio</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {printOrderList}  
+                    {printOrderList} 
+                    <tr>
+                        <td colSpan="2"><h3 id="total">Total: $ {suma}</h3></td>
+                    </tr>
+                    
                 </tbody>
             </Table>
             <button className="btn btn-secondary btn-lg" onClick={props.firebase}>Enviar Pedido</button>
