@@ -26,6 +26,7 @@ function Kitchen(props){
                     {printOrderList}  
                 </tbody>
             </Table>
+            <button className="btn btn-secondary btn-lg" onClick={props.firebase}>Enviar Pedido</button>
         </div>
     )
 }

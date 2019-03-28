@@ -7,6 +7,7 @@ import Breakfast from './components/breakfast.js'
 import Setmenu from './components/setmenu.js'
 import Registerclient from './components/client.js'
 import Kitchen from './components/kitchen';
+import {database} from './provider.js'
 
 class App extends Component {
   constructor(props){
@@ -24,6 +25,7 @@ class App extends Component {
     this.updateTemp= this.updateTemp.bind(this);
     this.updateName= this.updateName.bind(this);
     this.orderBreakfast= this.orderBreakfast.bind(this);
+    this.listenFirebase=this.listenFirebase.bind(this);
 
   }
 changeStateFunction(){
@@ -76,6 +78,22 @@ orderBreakfast(e){
     total: add
   })
 }
+
+listenFirebase(){
+  const order = {
+    name: this.state.name,
+    order: this.state.idorder
+  };
+  
+  let newPostKey = database.ref('kitchen').push().key;
+  
+  let updates = {};
+  updates['kitchen/'+ newPostKey] = order;
+  
+  
+  return database.ref().update(updates);
+  }
+
   render(){
     return (
       <div className="App">
@@ -89,7 +107,7 @@ orderBreakfast(e){
             { this.state.initialBreak && <Breakfast onClick={this.orderBreakfast} />}
             { this.state.initialSetmenu && <Setmenu onClick={this.orderBreakfast} /> }
           </div>
-          <Kitchen inputName={this.saveTemp()} inputOrder={this.state.idorder} inputTotal={this.state.total}/>
+          <Kitchen inputName={this.saveTemp()} inputOrder={this.state.idorder} inputTotal={this.state.total} firebase={this.listenFirebase}/>
         <h3>Total : {this.state.total}</h3>
         </div>
       </div>

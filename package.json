@@ -15,6 +15,7 @@
   "homepage": "https://olgamperez.github.io/SCL007-BurgerQueen",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "firebase": "^5.9.1",
     "gh-pages": "^2.0.1",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.6",
