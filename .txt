@@ -24,3 +24,63 @@ ejemplo: this.setState({
     pedidos: snaphot
 })
 al recibir el snaphot guardarlo para que se redibuje en la aplicacion.
+
+Taller: 02/04/2019
+- Podemos usar cuantas app necesitamos.
+- Costructor es como se crean los componentes.
+- Cada una de las funciones dentro de la app son el controlador y el render es la vista.
+- Solo vamos a testear cosas del controlador.
+
+testear
+-web: freeCodeCamp (guia) 
+-test por snaphot
+- DateInputComponent.simulate('change', {./././././././})
+- Tambien se debe simular un 'click'
+
+Estados
+- Cambia solo a traves del setState (hace que se vuelva a llamar el render). El setState no debemos llamarlo desde el render ya que puede quedar en un bucle infinito
+-
+Que significa
+
+Express operator ...
+this.setState({
+    ...this.state,
+    open:true
+})
+
+// a= {
+    b:1,
+    c:1
+}
+luego quiero cambiar c = 2 en operator
+otro={
+    ...a,
+    c:2
+}
+
+Lo que hace es crear una copia de a quedando de la siguiente forma:
+
+a={
+    b:1,
+    c:2
+}
+
+it('debe retornar ana galvez', () => {  
+      const burgerComponent = Enzyme.mount(<BurgerQueen />); //burgerQueen es el nombre de mi componente donde esta mi funcion
+      const inputComponent = burgerComponent.find('input') //con find indico que busco un input en mi componente
+      const buttonComponent = burgerComponent.find('button'); //aqui indico que busco el boton que hace click y cambia el estado donde guardo el nombre
+      inputComponent.simulate('change', { target: {value: 'ana galvez'} });
+      buttonComponent.filter('.click_data').simulate('click'); //'.click_data' es el nombre de la clase de mi boton
+      expect(burgerComponent.state().name).toEqual('ana galvez'); //name, es el estado donde guardo el nombre
+});
+
+//hay que escribir target: value: para enviar los datos
+//filter ayuda a filtrar solo el componente que nos interesa que tiene esa clase en particular
+
+
+taller 03/04
+Con redux se puede cambiar estado solo con acciones, luego el reducidor toma esa respuesta y lo guarda (de alguna forma) y el desencadena la actualización del estado.
+A traves de este nuevo estado se ejecuta nuevamente en render
+Redux Thunk(leer documentación e instalar)
+
+reducidor: cambia el estado y lo retorna.

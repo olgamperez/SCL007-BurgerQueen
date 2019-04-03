@@ -1,10 +1,11 @@
 import React from 'react';
 import App from './App.js';
 import { shallow } from 'enzyme';
-import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import Enzyme from 'enzyme';
 
-configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() });
+
 
 describe('App',()=>{
   it('renders Kitchen', ()=>{
@@ -20,4 +21,12 @@ describe('App',()=>{
     expect(wrapper.find('Registerclient').length).toBe(1);
   });
 })
+it('debe retornar olga perez', () => {
+  const burgerComponent = Enzyme.mount(<App />); //burgerQueen es el nombre de mi componente constructor donde
+  const inputComponent = burgerComponent.find('Registerclient').find('input');
+  const buttonComponent = burgerComponent.find('button');
+  inputComponent.simulate('change', { target: {value: 'olga perez'} });
+  buttonComponent.filter('.btn-name').simulate('click');
+  expect(burgerComponent.state().name).toEqual('olga perez');
+});
 
