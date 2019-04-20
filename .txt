@@ -84,3 +84,50 @@ A traves de este nuevo estado se ejecuta nuevamente en render
 Redux Thunk(leer documentación e instalar)
 
 reducidor: cambia el estado y lo retorna.
+
+para instalar redux desde la terminar ejecutar el comando yarn add redux, luego de instalado
+crear una carpeta dentro de src llamada actions y dentro de esta un archivo actionsTypes.js.
+se crea otro archivo pokemonActions.js dond se le da la accion
+una ves creada la funcioncreamos los reducidores. una nuevacarpeta reducers y dentro un archivo pokemonReducer
+
+IMPORTANTE: import de las acciones
+import * as actions from '../actions/actionsTypes';
+
+export default(
+    state= {
+        name:
+    },
+    action
+)=>{
+    switch(action.type){
+        case actions.EVOLUCIONAR_POKEMON:
+        return{
+            ...state,
+            name: 'Ivysaur'
+        };
+        default:
+        return {...state};
+    }
+};
+esta funcion lo que hace es que toma el estado anterior y retorna el nuevo.
+
+luego creamos un archivo index.js dentro de la carpeta reducers
+
+import {combineReducers} from 'redux';
+import pokemonReducer from './pokemonReducer';
+const rootReducer = combineReducers
+
+
+en src creamos una carpeta store y dentro un index.js
+colocar el codigo que siempre sera el mismo
+
+luego en el index.js de la aplicacion 
+encerrar el reden del reactDom dentro de un provider store
+////
+para usar redux se envuelve la app con el connect 
+
+
+
+
+
+EN EL ARCHIVO DEFINIR LAS VARIABLES

@@ -1,16 +1,13 @@
 import React from 'react';
 import App from './App.js';
 import { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme from 'enzyme';
 
-Enzyme.configure({ adapter: new Adapter() });
 
 
 describe('App',()=>{
-  it('renders Kitchen', ()=>{
+  it('renders Header', ()=>{
     const wrapper = shallow(<App />);
-    expect(wrapper.find('Kitchen').length).toBe(1);
+    expect(wrapper.find('Header').length).toBe(1);
   });
   it('renders Food', ()=>{
     const wrapper = shallow(<App />);
